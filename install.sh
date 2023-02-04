@@ -1,7 +1,7 @@
 #!/bin/sh
 # Install executables for Gpr mode.
-#
-# $1 : optional <install dir>
+# 
+# $1 : optional --prefix=<dir>
 #   
 # See build.sh for build (must be run before install).
 
@@ -15,6 +15,8 @@ fi
 echo "installing gpr-mode executables to" $PREFIX/bin
 
 # No need for gprinstall; we only need the executables
+
+mkdir -p $PREFIX/bin
 
 if type alr; then
     cp emacs_gpr_mode*/bin/* $PREFIX/bin
